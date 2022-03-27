@@ -1,0 +1,116 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[scaled]{helvet}
+\usepackage[T1]{fontenc}
+\usepackage[left=4cm, right=2cm, top=4cm, bottom=2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[ngerman]{babel}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{svg}
+
+% ----- begin of custome commands and configuration
+
+% TODO: Set \graphicspath for unified ressource base
+
+\def\logo{\includegraphics[scale=3.0]{<PATH-TO-LOGO>}}
+
+\def\author{<YOUR-NAME>}
+\def\title{<TITLE-OF-SCIENTIFIC-PAPER>}
+\def\courseOfStudy{<YOUR-COURSE>}
+\def\module{<NAME-OF-THE-MODULE>}
+\def\location{<LOCATION-OF-UNIVERSITY>}
+\def\firstconsultant{<MENTOR>}
+\def\studentnumber{<STUDENDNUMBER>}
+\def\dateOfSubmission{<DATE-OF-SUBMISSION>}
+
+\def\maketitle{
+\begin{titlepage}
+	\newgeometry{left=4cm, right=2cm, top=2cm, bottom=2cm}
+	\begin{center}
+		\begin{center}
+			\logo
+		\end{center}
+		\vspace{.5cm}
+		\begin{Large}
+			\textbf{FOM Hochschule für Oekonomie \& Management}
+			\begin{small}
+				Hochschulzentrum \location
+			\end{small}
+		\end{Large} \\
+		\vspace{1.5cm}
+		\begin{large}
+			\textbf{Hausarbeit} \\
+			\begin{small}
+				im Studiengang \courseOfStudy
+			\end{small}
+		\end{large} \\
+		\vspace{1.0cm}
+		\begin{small}
+			im Rahmen des Moduls \\
+			\vspace{.15cm}
+			\begin{large}
+				\textbf{\module}
+			\end{large}
+		\end{small} \\
+		\vspace{2.5cm}
+		\begin{small}
+			über das Thema \\
+			\vspace{.15cm}
+			\begin{large}
+				\textbf{\title}
+			\end{large}
+		\end{small} \\
+		\vspace{1.0cm}
+		von \\
+		\author
+	\end{center}
+	\vspace*{\fill}
+	\begin{tabular}{l @{ : } l}
+		Erstgutachter & \firstconsultant \\
+		Matrikelnummer & \studentnumber \\
+		Abgabedatum & \dateOfSubmission \\
+	\end{tabular}
+	\restoregeometry
+\end{titlepage}	
+
+}
+
+\renewcommand\sectionmark[1]{\markboth{#1}{}}
+\renewcommand\familydefault{\sfdefault}
+
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black
+}
+
+\pagestyle{fancy}
+
+% ##############################              begin of content
+
+\rhead{\thepage} % definition of right header
+\lhead{\nouppercase\leftmark} % definition of left header (main section name without leading number)
+\chead{ } % definition of center header
+\rfoot{ } % definition of right footer
+\lfoot{ } % definition of left footer
+\cfoot{ } % definition of center footer
+
+\makeindex
+
+\begin{document}
+
+\maketitle
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{This is a main section, like an chapter}
+  \subsection{This is an subsection}
+    \subsubsection{This is a subsection of the subsection}
+\end{document}
