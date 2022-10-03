@@ -1,0 +1,67 @@
+\usepackage{geometry}
+
+\newcommand{\tableAppearance}{
+	\setlength\tabcolsep{1.15em}
+	\def\arraystretch{1.25}
+}
+
+\newcommand{\tableref}[1]{Tabelle \ref{#1}}
+\newcommand{\figref}[1]{Abbildung \ref{#1}}
+\newcommand{\secref}[1]{Abschnitt \ref{#1}}
+
+\renewcommand\sectionmark[1]{\markboth{#1}{}}
+\renewcommand\familydefault{\sfdefault}
+\renewcommand{\listfigurename}{\section{Abbildungsverzeichnis}}
+
+\renewcommand{\maketitle}[9]{
+	\begin{titlepage}
+		\newgeometry{left=4cm, right=2cm, top=2cm, bottom=2cm}
+		\begin{center}
+			\begin{center}
+				\includegraphics[scale=3.0]{<Path to logo>}
+			\end{center}
+			\vspace{.5cm}
+			\begin{Large}
+				\textbf{FOM Hochschule für Oekonomie \& Management}
+				\begin{small}
+					\\ Hochschulzentrum #5
+				\end{small}
+			\end{Large} \\
+			\vspace{1.5cm}
+			\begin{large}
+				\textbf{Hausarbeit} \\
+				\begin{small}
+					im Studiengang #3
+				\end{small}
+			\end{large} \\
+			\vspace{1.0cm}
+			\begin{small}
+				im Rahmen des Moduls \\
+				\vspace{.15cm}
+				\begin{large}
+					\textbf{#4}
+				\end{large}
+			\end{small} \\
+			\vspace{2.5cm}
+			\begin{small}
+				über das Thema \\
+				\vspace{.15cm}
+				\begin{large}
+					\textbf{#2}
+				\end{large}
+			\end{small} \\
+			\vspace{1.0cm}
+			von \\
+			#1
+		\end{center}
+		\vspace*{\fill}
+		\begin{tabular}{l @{ : } l}
+			Erstgutachter & #6 \\
+			Matrikelnummer & #7 \\
+			Abgabedatum & #8 \\
+			Wortanzahl & #9 \\
+		\end{tabular}
+		\restoregeometry
+	\end{titlepage}	
+}
+}

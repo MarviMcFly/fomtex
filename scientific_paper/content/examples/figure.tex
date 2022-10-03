@@ -1,0 +1,9 @@
+\usepackage{graphicx}
+
+\begin{figure}[h]																	% h is here, t or b is top or bottom. ! overrides internal LaTeX parameters
+	\centering																		% center the figure within the box
+	\includegraphics[width=0.7\linewidth]{<Path>}									% relativ path to graphic from \graphicspath. width is followed by a unit
+	\caption[<Caption in \listoffigures>]{<Caption below the figure>\footnotemark} 	% define caption. \footnotemark enabled citation with following \footnotetext definition
+	\label{fig:<Lable name>}														% label for refferencing the figure within the written text 
+\end{figure}
+\footnotetext{<cite>}																% definition of the cite / footnote
