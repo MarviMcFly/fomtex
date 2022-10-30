@@ -12,7 +12,7 @@
 \usepackage{fancyhdr}
 \usepackage{hyperref}
 \usepackage{svg}
-\usepackage[style=long,nonumberlist,toc,xindy,acronym]{glossaries}
+\usepackage[style=long,nonumberlist,toc,acronym]{glossaries}
 \usepackage[section]{placeins}
 \usepackage{setspace}
 \usepackage[autostyle]{csquotes}
@@ -38,6 +38,7 @@
 \addbibresource{./resources/library/book.bib}
 \addbibresource{./resources/library/article.bib}
 
+\loadglsentries{./resources/common/acronyms}
 \loadglsentries{./resources/common/glossarie}
 
 \definecolor{gray}{gray}{0.25}
@@ -66,24 +67,28 @@
 \begin{document}
 	\maketitle{<Author>}{<Titel>}{<Profession>}{<Module>}{<Location>}{<First consultant>}{<Number>}{<Date of submission>}{<Words>}
 	
-	\pagenumbering{Roman}
-	
 	\newpage
+	\enlargethispage{-20mm}
 	\tableofcontents
 	\newpage
 	
 	\begin{onehalfspace}
+
 	\addcontentsline{toc}{section}{Abbildungsverzeichnis}
 	\listoffigures
 	\newpage
 	\addcontentsline{toc}{section}{Tabellenverzeichnis}
 	\listoftables
 	\newpage
-	\printglossary[type=\acronymtype,title=Abkürzungsverzeichnis]
+	\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
+	\printglossary[type=\acronymtype, title=Abkürzungsverzeichnis, toctitle=Abkürzungsverzeichnis]
 	\newpage
-	\printglossary[title=Glossar]
+%	\addcontentsline{toc}{section}{Glossar}
+%	\printglossary[title=Glossar, toctitle=Glossar]
+%	\newpage
+		
 	\newpage
-
+	
 	\pagenumbering{arabic}
 	
 	\parindent=0pt
