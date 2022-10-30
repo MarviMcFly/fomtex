@@ -29,4 +29,7 @@ pdflatex -synctex=1 -interaction=nonstopmode -output-directory=$buildpath main.t
 cp $buildpath/main.pdf $buildpath/"$timestamp"_main.pdf
 mv -f $buildpath/main.pdf ./main.pdf
 
-xdg-open ./main.pdf
+if [ "$1" == "-o" ] || [ "$1" == "--open" ]; 
+then 
+  xdg-open ./main.pdf
+fi

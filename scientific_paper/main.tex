@@ -12,7 +12,7 @@
 \usepackage{fancyhdr}
 \usepackage{hyperref}
 \usepackage{svg}
-\usepackage[style=long,nonumberlist,toc,xindy,acronym,nomain]{glossaries}
+\usepackage[style=long,nonumberlist,toc,xindy,acronym]{glossaries}
 \usepackage[section]{placeins}
 \usepackage{setspace}
 \usepackage[autostyle]{csquotes}
@@ -66,6 +66,8 @@
 \begin{document}
 	\maketitle{<Author>}{<Titel>}{<Profession>}{<Module>}{<Location>}{<First consultant>}{<Number>}{<Date of submission>}{<Words>}
 	
+	\pagenumbering{Roman}
+	
 	\newpage
 	\tableofcontents
 	\newpage
@@ -79,6 +81,10 @@
 	\newpage
 	\printglossary[type=\acronymtype,title=Abkürzungsverzeichnis]
 	\newpage
+	\printglossary[title=Glossar]
+	\newpage
+
+	\pagenumbering{arabic}
 	
 	\parindent=0pt
 	\parskip=6pt
