@@ -33,4 +33,3 @@ pdflatex -synctex=1 -interaction=nonstopmode -output-directory="$buildpath" main
 # copy and cleanup dosacuments
 Copy-Item -Force "$buildpath\main.pdf" ".\main.pdf"
 Rename-Item -Path "$buildpath\main.pdf" -NewName "$($timestamp)_main.pdf"
-
